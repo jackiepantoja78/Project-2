@@ -7,7 +7,17 @@
     </head>
     <body>
         <h1>LAMC Student Support Resources</h1>
-        <input type="text" id="search" placeholder="Search resources...">
+        <div id="controls">
+            <input type="text" id="search" placeholder="Search resources...">
+            <div id="filters">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                </select>
+                <select id="location-filter">
+                    <option value="">All Locations</option>
+                </select>
+            </div>
+        </div>
         <div id="resource-list"></div>
         <script src="app.js"></script>
     </body>
