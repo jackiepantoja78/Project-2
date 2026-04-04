@@ -12,29 +12,119 @@ h1 {
     color: white;
     margin: 0;
 }
+/* controls: search and filters */
+#controls {
+    width: 65%;
+    margin: 20px auto;
+}
+
 /*search bar*/
 #search {
     display: block;
     margin: 20px auto;
     padding: 12px;
-    width: 60%;
+    width: 100%;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+
+}
+#filters {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+#filters select {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    color: #2E4057;
+    cursor: pointer;
+
 }
 /*resource card*/
 .card {
     background: white;
-    padding: 20px;
     margin: 15px auto;
-    width: 6%;
+    width: 65%;
     border-radius: 10px;
     border: 1px solid #E5E7EB;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+.card-header {
+    padding: 20px; 
+    cursor: pointer; 
+    user-select: none;
+}
+.card-header:hover {
+    background-color: #f5f0ea;
+}
+
+.card-title-row{
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
 }
 /*card title*/
 .card h2 {
     color: #2E4057;
+    margin: 0 0 10px 0;
+    font-size: 18px;
 }
+
+.chevron {
+    font-size: 14px;
+    color: #6C8EBF;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.card.expanded .chevron {
+    transform: rotate(180deg);
+}
+
+.card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold; 
+}
+
+.category-tag {
+    background-color: #E8EFF8;
+    color: #2E4057;
+}
+
+.location-tag {
+    background-color: #FAE8E4;
+    color: #D97B66;
+}
+
+.card-body {
+    display: none;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.card.expanded .card-body {
+    display: block;
+}
+
 /*category text*/
 .card p strong {
     color: #6C8EBF;
@@ -47,7 +137,17 @@ button {
     padding: 10px 15px;
     border-radius: 6px;
     cursor: pointer;
+    margin-top: 8px; 
+    font-size: 14px; 
 }
 button:hover {
     opacity: 0.9;
+}
+
+/*no select messgae */
+.no-results {
+    text-align: center; 
+    color: #888; 
+    margin-top: 40px; 
+    font-size: 16px; 
 }
